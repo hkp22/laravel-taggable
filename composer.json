@@ -1,0 +1,21 @@
+{
+    "name": "hkp22/laravel-taggable",
+    "description": "An Eloquent tagging package for laravel.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Harish Kumar",
+            "email": "harish.pra22@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "hkp22\\laravelTaggable\\": "src"
+        }
+    },
+    "require": {
+        "php": ">=5.5.0",
+        "illuminate/database": ">= 5.0",
+        "illuminate/support": ">= 5.0"
+    }
+}
