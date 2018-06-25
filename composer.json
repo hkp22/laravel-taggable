@@ -10,7 +10,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "hkp22\\laravelTaggable\\": "src"
+            "Hkp22\\LaravelTaggable\\": "src"
         }
     },
     "require": {
