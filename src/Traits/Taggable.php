@@ -44,6 +44,48 @@ trait Taggable
     }
 
     /**
+     * Remove either all tags or given tags from this model.
+     *
+     * @param  mixed $tags
+     * @return void
+     */
+    public function untag($tags = null)
+    {
+        if ($tags === null) {
+            $this->removeAllTags();
+
+            return;
+        }
+
+        $this->removeTags($this->getWorkableTags($tags));
+    }
+
+    /**
+     * Removes all tags.
+     *
+     * @return void
+     */
+    private function removeAllTags()
+    {
+        $this->removeTags($this->tags);
+    }
+
+    /**
+     * Remove specified tags.
+     *
+     * @param  Illuminate\Support\Collection $tags
+     * @return void
+     */
+    private function removeTags(Collection $tags)
+    {
+        $this->tags()->detach($tags);
+
+        foreach ($tags->where('count', '>', 0) as $tag) {
+            $tag->decrement('count');
+        }
+    }
+
+    /**
     * Given either an array of Tag slugs, a single Tag model
     * or a Collection of Tags, return only a Collection of
     * Tags so they can be easily worked with in here.
