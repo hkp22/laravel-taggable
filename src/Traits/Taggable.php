@@ -29,6 +29,19 @@ trait Taggable
     }
 
     /**
+     * Delete all tags and retag model with given tags.
+     *
+     * @param  mixed $tags
+     * @return void
+     */
+    public function retag($tags)
+    {
+        $this->removeAllTags();
+
+        $this->tag($tags);
+    }
+
+    /**
     * Adds specified tags.
     *
     * @param  Illuminate\Support\Collection $tags
