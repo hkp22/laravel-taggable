@@ -7,6 +7,8 @@ use Hkp22\LaravelTaggable\Models\Tag;
 
 trait Taggable
 {
+    use TaggableScopes;
+
     /**
      * The tags relationship to this model.
      *
