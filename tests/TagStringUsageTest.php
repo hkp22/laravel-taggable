@@ -2,7 +2,7 @@
 
 use Hkp22\LaravelTaggable\Models\Tag;
 
-class TaggyUsageTest extends TestCase
+class TagStringUsageTest extends TestCase
 {
     protected $lesson;
 
@@ -94,7 +94,7 @@ class TaggyUsageTest extends TestCase
         $this->lesson->tag(['LARAVEL', 'testINg', 'fun stuff']);
 
         $this->assertCount(3, $this->lesson->tags);
-        
+
         foreach (['laravel', 'testing', 'fun-stuff'] as $tagSlug) {
             $this->assertContains($tagSlug, $this->lesson->tags->pluck('slug'));
         }
