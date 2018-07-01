@@ -1,6 +1,6 @@
 {
     "name": "hkp22/laravel-taggable",
-    "description": "An Eloquent tagging package for laravel.",
+    "description": "Laravel model tagging package.",
     "license": "MIT",
     "authors": [
         {
@@ -17,5 +17,16 @@
         "php": ">=5.5.0",
         "illuminate/database": ">= 5.0",
         "illuminate/support": ">= 5.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.0",
+        "phpunit/phpunit": "~5.0",
+        "vlucas/phpdotenv": "~2.0"
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php",
+            "tests/stubs/LessonStub.php"
+        ]
     }
 }
