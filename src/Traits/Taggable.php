@@ -4,6 +4,7 @@ namespace Hkp22\LaravelTaggable\Traits;
 
 use Illuminate\Support\Collection;
 use Hkp22\LaravelTaggable\Models\Tag;
+use Illuminate\Database\Eloquent\Model;
 
 trait Taggable
 {
