@@ -12,6 +12,19 @@ composer require hkp22/laravel-taggable
 
 ## Usage
 
+### Prepare Taggable model
+
+```php
+use Hkp22\LaravelTaggable\Traits\Taggable;
+use Illuminate\Database\Eloquent\Model as Eloquent;
+
+class Lesson extends Eloquent
+{
+    use Taggable;
+}
+```
+
+
 ### Tag Eloquent model
 Eg: Tagging a lesson Model.
 
