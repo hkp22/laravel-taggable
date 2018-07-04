@@ -24,6 +24,15 @@ class Lesson extends Eloquent
 }
 ```
 
+### Registering package
+
+Include the service provider within `app/config/app.php`:
+
+```php
+'providers' => [
+    Hkp22\LaravelTaggable\TaggableServiceProvider::class,
+],
+```
 
 ### Tag Eloquent model
 Eg: Tagging a lesson Model.
@@ -44,10 +53,10 @@ Eg: Un-tagging lesson model.
 
 ```php
 // Un-tag single tag.
-$this->lesson->untag(['laravel']);
+$lesson->untag(['laravel']);
 
 // Un-tag all tags.
-$this->lesson->untag();    
+$lesson->untag();    
 ```
 
 ### Re-tag eloquent model
